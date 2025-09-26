@@ -1,0 +1,31 @@
+Solution 1
+ALGORITHM sum_distinct_elements
+VAR
+    t1 : ARRAY_OF INTEGER[];
+    t2 : ARRAY_OF INTEGER[];
+    sum_total : INTEGER := 0;
+    sum_same : INTEGER := 0;
+    t1_total : INTEGER := 0;
+    t2_total : INTEGER := 0;
+    sum : INTEGER := 0;
+BEGIN
+    // Calculates the total of t1 array
+    FOR i FROM 1 TO t1.length STEP 1  DO
+        t1_total := t1_total + t[i];
+    END_FOR
+    // Calculates the total of t2 array
+    FOR j FROM 1 TO t2.length STEP 1  DO
+        t2_total := t2_total + t[j];
+    END_FOR  
+    sum_total := t1_total + t2_total;
+    // Calculates the sum of the same elements
+    FOR y FROM 1 TO t1.length STEP 1  DO
+     FOR z FROM 1 TO t2.length STEP 1  DO
+        IF (t1[y]=t2[z]) THEN
+            sum_same := sum_same + t1[y]*2
+        END_IF
+     END_FOR
+    END_FOR
+    sum := sum_total - sum_same
+    Write("Output: "sum)
+END

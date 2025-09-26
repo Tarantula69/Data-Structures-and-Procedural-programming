@@ -1,0 +1,46 @@
+FUNCTION Scalaire(a,b : ARRAY_OF INTEGER[]) : INTEGER
+VAR
+    sum : INTEGER := 0;
+BEGIN
+
+    FOR i FROM 1 TO a.length STEP 1  DO
+        sum := sum + a[i] * b[i]
+    END_FOR
+
+    RETURN sum ;
+END
+
+
+ALGORITHM Principal
+VAR
+    t : ARRAY_OF INTEGER[] : [1,5];
+    v : ARRAY_OF INTEGER[] : [-5,1];
+    resultat : INTEGER;
+BEGIN
+
+    IF (t.length <> v.length OR t.length< 2 OR t.length >3) THEN
+        Write("Error")
+    ELSE
+        resultat := Scalaire(t,v)
+
+        IF (resultat = 0) THEN
+            Write("Ortho")
+        ELSE
+            Write("Non Ortho")
+        END_IF
+    END_IF
+    
+    
+END
+
+
+PROCEDURE ScalaireP(a,b : ARRAY_OF INTEGER[], VAR c : INTEGER)
+VAR
+    sum : INTEGER := 0;
+BEGIN
+    FOR i FROM 1 TO a.length STEP 1  DO
+        sum := sum + a[i] * b[i]
+    END_FOR
+
+    c:= sum
+END 
